@@ -1,4 +1,4 @@
-package org.example.javamvc.session6.bt1.config;
+package org.example.javamvc.session6.bt2.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseConnect {
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost:3306/user";
+    public static final String URL = "jdbc:mysql://localhost:3306/book";
     public static final String USERNAME = "root";
     public static final String PASSWORD = "";
 
@@ -21,3 +21,4 @@ public class DatabaseConnect {
         }
     }
 }
+
