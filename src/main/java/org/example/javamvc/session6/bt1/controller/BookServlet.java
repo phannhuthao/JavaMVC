@@ -22,13 +22,13 @@ public class BookServlet extends HttpServlet {
         } else {
             switch (action) {
                 case "add":
-                    path = "/formAdd.jsp";
+                    path = "Session6/Bt1/formAdd.jsp";
                     break;
                 case "edit":
                     int id = Integer.parseInt(request.getParameter("id"));
                     Book book = service.getBookById(id);
                     request.setAttribute("book", book);
-                    path = "/formEdit.jsp";
+                    path = "Session6/Bt1/formEdit.jsp";
                     break;
             }
         }

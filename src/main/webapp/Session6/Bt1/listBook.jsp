@@ -1,18 +1,86 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
-<head><title>Danh sách sách</title></head>
+<head>
+    <title>Danh sách sách</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        th {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        .action-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        .action-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: #a71d2a;
+        }
+
+        .add-btn {
+            margin-bottom: 15px;
+            background-color: #28a745;
+        }
+
+        .add-btn:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
 <body>
-<h2>Danh sách Sách</h2>
-<a href="${pageContext.request.contextPath}/books?action=add">Thêm sách mới</a>
-<table border="1">
+
+<form action="${pageContext.request.contextPath}/books" method="get" style="margin-bottom: 20px;">
+    <input type="hidden" name="action" value="add"/>
+    <input type="submit" value="➕ Thêm sach moi" class="action-btn add-btn"/>
+</form>
+
+<table>
     <thead>
     <tr>
-        <th>Mã</th>
-        <th>Tiêu đề</th>
-        <th>Tác giả</th>
-        <th>Thể loại</th>
-        <th>Số lượng</th>
-        <th>Hành động</th>
+        <th>Ma</th>
+        <th>Tieu đe</th>
+        <th>Tac gia</th>
+        <th>The loai</th>
+        <th>So luong</th>
+        <th>Hanh dong</th>
     </tr>
     </thead>
     <tbody>
@@ -24,14 +92,22 @@
             <td><c:out value="${book.category}"/></td>
             <td><c:out value="${book.quantity}"/></td>
             <td>
-                <a href="${pageContext.request.contextPath}/books?action=edit&id=${book.id}">Sửa</a>
-                <form action="${pageContext.request.contextPath}/books?action=delete&id=${book.id}" method="post" style="display:inline;">
-                    <input type="submit" value="Xóa"/>
+                <form action="${pageContext.request.contextPath}/books" method="get" style="display:inline;">
+                    <input type="hidden" name="action" value="edit"/>
+                    <input type="hidden" name="id" value="${book.id}"/>
+                    <input type="submit" value="✏Sua" class="action-btn"/>
+                </form>
+
+                <form action="${pageContext.request.contextPath}/books" method="post" style="display:inline;">
+                    <input type="hidden" name="action" value="delete"/>
+                    <input type="hidden" name="id" value="${book.id}"/>
+                    <input type="submit" value="🗑Xoa" class="action-btn delete-btn"/>
                 </form>
             </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+
 </body>
 </html>
