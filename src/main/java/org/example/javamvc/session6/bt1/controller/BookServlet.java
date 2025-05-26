@@ -4,10 +4,12 @@ import org.example.javamvc.session6.bt1.model.Book;
 import org.example.javamvc.session6.bt1.service.BookService;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
+@WebServlet("/books")
 public class BookServlet extends HttpServlet {
     private final BookService service = new BookService();
 
@@ -18,17 +20,17 @@ public class BookServlet extends HttpServlet {
         if (action == null) {
             List<Book> books = service.getAllBooks();
             request.setAttribute("books", books);
-            path = "/listBook.jsp";
+            path = "/Session6/Bt1/listBook.jsp";
         } else {
             switch (action) {
                 case "add":
-                    path = "Session6/Bt1/formAdd.jsp";
+                    path = "/Session6/Bt1/formAdd.jsp";
                     break;
                 case "edit":
                     int id = Integer.parseInt(request.getParameter("id"));
                     Book book = service.getBookById(id);
                     request.setAttribute("book", book);
-                    path = "Session6/Bt1/formEdit.jsp";
+                    path = "/Session6/Bt1/formEdit.jsp";
                     break;
             }
         }

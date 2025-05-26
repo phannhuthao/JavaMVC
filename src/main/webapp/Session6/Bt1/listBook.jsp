@@ -69,18 +69,18 @@
 
 <form action="${pageContext.request.contextPath}/books" method="get" style="margin-bottom: 20px;">
     <input type="hidden" name="action" value="add"/>
-    <input type="submit" value="➕ Thêm sach moi" class="action-btn add-btn"/>
+    <input type="submit" value="Thêm sach moi" class="action-btn add-btn"/>
 </form>
 
 <table>
     <thead>
     <tr>
-        <th>Ma</th>
-        <th>Tieu đe</th>
-        <th>Tac gia</th>
-        <th>The loai</th>
-        <th>So luong</th>
-        <th>Hanh dong</th>
+        <th>Mã</th>
+        <th>Tiêu đề</th>
+        <th>Tác giả</th>
+        <th>Thể loại</th>
+        <th>Số lượng</th>
+        <th>Chức năng</th>
     </tr>
     </thead>
     <tbody>
@@ -95,13 +95,13 @@
                 <form action="${pageContext.request.contextPath}/books" method="get" style="display:inline;">
                     <input type="hidden" name="action" value="edit"/>
                     <input type="hidden" name="id" value="${book.id}"/>
-                    <input type="submit" value="✏Sua" class="action-btn"/>
+                    <input type="submit" value="Sửa" class="action-btn"/>
                 </form>
 
                 <form action="${pageContext.request.contextPath}/books" method="post" style="display:inline;">
                     <input type="hidden" name="action" value="delete"/>
                     <input type="hidden" name="id" value="${book.id}"/>
-                    <input type="submit" value="🗑Xoa" class="action-btn delete-btn"/>
+                    <input type="submit" value="Xóa" class="action-btn delete-btn"/>
                 </form>
             </td>
         </tr>

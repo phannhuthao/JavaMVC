@@ -12,6 +12,7 @@ public class DatabaseConnect {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         try {
+            Class.forName(DRIVER);
             return DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             System.out.println("Lỗi kết nối CSDL:");
