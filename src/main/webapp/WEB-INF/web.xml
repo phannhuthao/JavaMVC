@@ -5,7 +5,7 @@
          version="4.0">
 
 
-    <welcome-file-list>
-        <welcome-file>Session6/Bt5/game.jsp</welcome-file>
-    </welcome-file-list>
+<!--    <welcome-file-list>-->
+<!--        <welcome-file></welcome-file>-->
+<!--    </welcome-file-list>-->
 </web-app>
