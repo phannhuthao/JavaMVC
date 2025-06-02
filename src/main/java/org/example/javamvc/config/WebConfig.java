@@ -15,7 +15,7 @@ public class WebConfig {
     @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/Session9/");
+        resolver.setPrefix("/Session10/");
         resolver.setSuffix(".jsp");
         return resolver;
     }
