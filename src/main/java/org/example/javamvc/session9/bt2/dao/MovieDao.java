@@ -12,7 +12,7 @@ public class MovieDao {
     public static List<Movie> showInfoMovie() {
         List<Movie> movies = new ArrayList<>();
         try (Connection conn = DatabaseConnect.getConnection()) {
-            String sql = "SELECT * FROM movies";
+            String sql = "SELECT * FROM movie";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -36,7 +36,7 @@ public class MovieDao {
 
     public static Movie showInfoDetailMovie(Long id) {
         try (Connection conn = DatabaseConnect.getConnection()) {
-            String sql = "SELECT * FROM movies WHERE id = ?";
+            String sql = "SELECT * FROM movie WHERE id = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();

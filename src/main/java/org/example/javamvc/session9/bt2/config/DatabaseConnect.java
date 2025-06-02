@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseConnect {
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost:3306/movies";
+    public static final String URL = "jdbc:mysql://localhost:3306/moive";
     public static final String USERNAME = "root";
     public static final String PASSWORD = "";
 
